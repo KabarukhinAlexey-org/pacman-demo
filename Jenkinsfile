@@ -12,7 +12,7 @@ pipeline{
       stage('Building image') {
       steps{
         script {
-          app = docker.build(registry)
+          app = docker.build("registry")
           sh "env"
         }
       }
