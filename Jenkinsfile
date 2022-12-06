@@ -18,7 +18,7 @@ pipeline{
       steps{
         script {
           sh "env && ls -lah"
-            docker.withRegistry('https://registry-1.docker.io/', '${registryCredential}') {
+            docker.withRegistry('https://registry-1.docker.io/', "${registryCredential}") {
             def app = docker.build("${registry}")
             app.push("${GIT_BRANCH}")
           }
