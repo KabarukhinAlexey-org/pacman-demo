@@ -9,10 +9,11 @@ pipeline{
     }
     
     stages{
-       stage('Building image') {
+      stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build registry
+          sh "docker version"
+          sh "env"
         }
       }
     }
