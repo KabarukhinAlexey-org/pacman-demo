@@ -9,11 +9,11 @@ pipeline{
     }
     stages{
       stage('Building image') {
-      #agent {
-      #  docker {
-      #    image 'node:7-alpine'
-      #    args '--name docker-node' // list any args
-      #  }
+      //agent {
+      //  docker {
+      //    image 'node:7-alpine'
+      //    args '--name docker-node' // list any args
+      //  }
       }
       steps{
         script {
