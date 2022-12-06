@@ -19,6 +19,7 @@ pipeline{
         script {
           sh "env && ls -lah"
           def app = docker.build("${registry}")
+          app.push()
         }
       }
     }
