@@ -5,9 +5,8 @@ pipeline{
         timestamps()
     }
     environment{
-        
         registry = "docker.io/akabarukhin/pacman-demo"
-        registryCredential = dockerhub-creds
+        registryCredential = credentials('dockerhub-creds')
     }
     
     stages{
