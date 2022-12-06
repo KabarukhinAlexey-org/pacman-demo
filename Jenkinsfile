@@ -18,8 +18,10 @@ pipeline{
       steps{
         script {
           sh "env && ls -lah"
-          def app = docker.build("${registry}")
-          app.push()
+          docker.withRegistry('https://registry-1.docker.io/', 'registryCredential') {
+            def app = docker.build("${registry}")
+            app.push("${GIT_BRANCH}")
+          }
         }
       }
     }
