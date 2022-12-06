@@ -14,6 +14,7 @@ pipeline{
           image 'node:7-alpine'
           args '--name docker-node' // list any args
         }
+      }
       steps{
         script {
           sh "env && ls -lah"
