@@ -4,7 +4,7 @@ pipeline{
         buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '5'))
     }
     environment{
-        registry = "docker.io/akabarukhin/pacman-demo"
+        registry = "akabarukhin/pacman-demo"
         registryCredential = credentials('dockerhub-creds')
     }
     stages{
@@ -18,7 +18,7 @@ pipeline{
       steps{
         script {
           sh "env && ls -lah"
-            docker.withRegistry('https://docker.io/', 'dockerhub-creds') {
+            docker.withRegistry('https://registry-1.docker.io/', 'dockerhub-creds') {
             def app = docker.build("${registry}")
             app.push("${GIT_BRANCH}")
           }
