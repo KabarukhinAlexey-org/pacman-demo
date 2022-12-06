@@ -11,8 +11,8 @@ pipeline{
       stage('Building image') {
       steps{
         script {
+          sh "env && ls -lah"
           def app = docker.build("${registry}")
-          sh "env"
         }
       }
     }
