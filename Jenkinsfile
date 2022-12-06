@@ -6,13 +6,13 @@ pipeline{
     environment{
         registry = "docker.io/akabarukhin/pacman-demo"
         registryCredential = credentials('dockerhub-creds')
+        def app
     }
-    
     stages{
       stage('Building image') {
       steps{
         script {
-          sh "docker version"
+          app = docker.build(registry)
           sh "env"
         }
       }
