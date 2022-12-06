@@ -17,7 +17,7 @@ pipeline{
       //}
       steps{
         script {
-          sh "find / -name docker 2>/dev/null && env && ls -lah"
+          sh "env && ls -lah"
           def app = docker.build("${registry}")
         }
       }
