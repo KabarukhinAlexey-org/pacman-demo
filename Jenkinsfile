@@ -18,7 +18,7 @@ pipeline{
       steps{
         script {
           sh "env && ls -lah"
-            docker.withRegistry('https://registry-1.docker.io/', 'dockerhub-creds') {
+            docker.withRegistry('https://docker.io/', 'dockerhub-creds') {
             def app = docker.build("${registry}")
             app.push("${GIT_BRANCH}")
           }
