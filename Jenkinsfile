@@ -1,5 +1,5 @@
 pipeline{
-    agent none
+    agent any
     options{
         buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '5'))
     }
@@ -9,15 +9,15 @@ pipeline{
     }
     stages{
       stage('Building image') {
-      agent {
-        docker {
-          image 'node:7-alpine'
-          args '--name docker-node' // list any args
-        }
+      #agent {
+      #  docker {
+      #    image 'node:7-alpine'
+      #    args '--name docker-node' // list any args
+      #  }
       }
       steps{
         script {
-          sh "env && ls -lah"
+          sh "find / -name docker 2>/dev/null && env && ls -lah"
           def app = docker.build("${registry}")
         }
       }
