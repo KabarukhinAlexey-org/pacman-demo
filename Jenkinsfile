@@ -12,7 +12,6 @@ pipeline{
       stage('Building image') {
       steps{
         script {
-          sh "env && ls -lah"
             docker.withRegistry("${registry}", 'dockerhub-creds') {
             def app = docker.build("${repository}")
             app.push("${GIT_BRANCH}")
