@@ -1,6 +1,6 @@
 pipeline{
     agent {
-      docker { image 'docker' }
+      image 'docker'
     }
     options{
         buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '5'))
