@@ -14,7 +14,7 @@ pipeline{
         script {
             docker.withRegistry("${registry}", 'dockerhub-creds') {
             def app = docker.build("${repository}")
-            app.push("${GIT_BRANCH}")
+            app.push("${GIT_BRANCH}-${GIT_COMMIT}")
           }
         }
       }
