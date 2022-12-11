@@ -36,7 +36,7 @@ spec:
       source:
         helm:
           parameters:
-          - name: appBranch
+          - name: imageTag
             value: '{{branch}}-{{sha}}' # <- As the image tag will be used branch name + GIT_COMMIT. Docker images are build in the Jenkins.
         path: pacman
         repoURL: https://github.com/KabarukhinAlexey/pacman-helm.git # <- Since we are installing our application throught to helm then here we are specifying the helm repo but not the app repo.
