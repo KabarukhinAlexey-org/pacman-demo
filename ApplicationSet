@@ -1,4 +1,3 @@
-cat <<EOF | oc create -f -
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
@@ -48,4 +47,3 @@ spec:
           selfHeal: true
         syncOptions:
         - CreateNamespace=true
-EOF
