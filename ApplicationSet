@@ -20,11 +20,6 @@ spec:
           selector:
             matchLabels:
               env: DEV
-          values:
-            ns: pacman
-            version: main
-  syncPolicy:
-    preserveResourcesOnDeletion: false
   template:
     metadata:
       name: pacman-{{branch}}
@@ -45,5 +40,7 @@ spec:
         automated:
           prune: true
           selfHeal: true
+          allowEmpty: true
+          preserveResourcesOnDeletion: false
         syncOptions:
         - CreateNamespace=true
