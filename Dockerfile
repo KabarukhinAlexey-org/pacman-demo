@@ -3,11 +3,11 @@ ENV NODE_ENV=production
 
 WORKDIR /app
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY ["pacman-demo-app/package.json", "package-lock.json*", "./"]
 
 RUN npm install --production
 
-COPY . .
+COPY ./pacman-demo-app/ .
 
 EXPOSE 8080
 
