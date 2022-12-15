@@ -3,7 +3,7 @@
 An old classic, re-written in HTML5.
 Visit http://pacman.platzh1rsch.ch to see it live or build it by yourself.
 
-![Alt text](pacman-demo-app.img/game.jpg?raw=true "Game")
+![Alt text](pacman-demo-app/img/game.jpg?raw=true "Game")
 
 ---
 
