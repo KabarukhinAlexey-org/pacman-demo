@@ -23,8 +23,6 @@ Visit http://pacman.platzh1rsch.ch to see it live or build it by yourself.
 
 1. Create Jenkins mitlibranch pipeline refering to this repository. [Jenkinsfile](Jenkinsfile) 
 2. Add variable **dockerhub-creds** to Jenkins with credentials to the image registry.
-This variable is presented in the following places: 
-- Helm Chart: https://github.com/KabarukhinAlexey/pacman-helm/blob/main/pacman/templates/deployment.yaml#L15
-- Jenkinsfile: https://github.com/KabarukhinAlexey-org/pacman-demo/blob/main/Jenkinsfile#L7-L8
+This variable is presented in the Jenkinsfile: https://github.com/KabarukhinAlexey-org/pacman-demo/blob/main/Jenkinsfile#L7-L8
  
 3. Create [ApplicationSet](applicationSet.yaml) in K8s or in OpenShift 
